@@ -5,7 +5,7 @@ Targeted loading of javascript and css for CodeIgniter - inspired by "Developing
 
 In reading the above mentioned book a few years ago, I started to ruminate on how much I disliked including all the javascript and css for a site (esp. large sites) with every page load. 
 
-It's not horrendously inefficient, as obviously the brower cache handles much of the repeated heavy lifting, but it is not at all modular and although we all follow the separation of concerns philosophy and have for many a year - with large sites thousands of lines of code can be in the .js and .css files that our sites use. 
+It's not horrendously inefficient, as obviously the brower cache handles much of the repeated heavy lifting, but it is not at all modular and although we all follow the separation of concerns philosophy, with large sites thousands of lines of code can be in the .js and .css files that our sites use. 
 
 I was using CodeIgniter for a very large site at the time and wanted to be able to include the necessary js and css with each controller or each controller method, modularizing my code and keeping everything in one place so that when I revisited some particular piece of functionality later on I would get back up to speed much more quickly and if the module was reused, I would be fixing/improving in all places the modular code was used with whatever localized changes I was introducing. 
 
@@ -42,7 +42,8 @@ This is the library that co-ordinates the config directives to enable modular lo
 
 combinator.php
 --------------
-Niels Leenheer's Combinator Script
+Niels Leenheer's Combinator Script. Edit the following lines to provide the correct path and DONT FORGET TO SET THE CORRECT PERMISSIONS
+ON YOUR application/cache/ directory! (how many times have I made this error?).
 
 welcome.php
 -----------
@@ -51,6 +52,8 @@ You will be familiar with the CodeIgniter welcome page and welcome.php controlle
 
 ===============
 Whilst different manners of acheiving the same goal are no doubt plentiful out there, I hope my solution is useful for some and helps keep your site clean and modular. 
+
+A tarball of the latest codeigniter at the time of committing these files with Links Library and all dependencies installed is here in the repository. 
 
 Sam :)
 
