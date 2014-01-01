@@ -1,0 +1,14 @@
+RewriteEngine On
+RewriteBase /
+
+
+
+RewriteCond $1 !^(index\.php|www|css|js|images|robots\.txt|sitemap\.xml|combinator\.php)
+RewriteRule ^(.*)$ /index\.php/$1 [L]
+
+RewriteRule ^www/css/(.*\.css) /combinator.php?type=css&files=$1 
+RewriteRule ^www/js/(.*\.js) /combinator.php?type=javascript&files=$1
+
+
+
+
