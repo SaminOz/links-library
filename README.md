@@ -9,7 +9,7 @@ It's not horrendously inefficient, as obviously the brower cache handles much of
 
 I was using CodeIgniter for a very large site at the time and wanted to be able to include the necessary js and css with each controller or each controller method, modularizing my code and keeping everything in one place so that when I revisited some particular piece of functionality later on I would get back up to speed much more quickly and if the module was reused, I would be fixing/improving in all places the modular code was used with whatever localized changes I was introducing. 
 
-I found CSS and Javascript Combinator 0.5 by Niels Leenheer somewhere out there and then wrote a library for CodeIgnitor that allowed js and css to be loaded on demand at the method level. I've been using this library for about 5 years now and although I don't do so much with CodeIgniter anymore, whenever I do create a new application using it I always set up this modular loading system to help me keep my code clean and manageable. 
+I found CSS and Javascript Combinator 0.5 by Niels Leenheer somewhere out there and then wrote a library for CodeIgniter that allowed js and css to be loaded on demand at the method level. I've been using this library for about 5 years now and although I don't do so much with CodeIgniter anymore, whenever I do create a new application using it I always set up this modular loading system to help me keep my code clean and manageable. 
 
 Implementation
 ==============
@@ -22,6 +22,7 @@ To set up the links library you will need to add or make changes to the followin
  - /application/views/footer.php (or wherever you load your closing </body> element
  - /application/libraries/links.php
  - /combinator.php (same directory as your index.php and .htaccess files)
+ - /application/controllers/welcome.php
  
 .htaccess
 -------------
@@ -42,6 +43,10 @@ This is the library that co-ordinates the config directives to enable modular lo
 combinator.php
 --------------
 Niels Leenheer's Combinator Script
+
+welcome.php
+-----------
+You will be familiar with the CodeIgniter welcome page and welcome.php controller - I've add a call to links in the constructor for a js and css file that will be used in every page served by methods in this controller and I have added a method specific call to links which loads js and css only for the index method. 
 
 
 ===============
